@@ -22,11 +22,16 @@ from Manager.modules.helper_funcs.misc import paginate_modules
 PM_START_TEXT = """
 Hello *{}*, my name is *{}*!
 
-*Maintained by [Divyansh 🇮🇳](t.me/divyansh_choudhary)*
+*Made & Maintained by [Divyansh 🇮🇳](t.me/divyansh_choudhary)*
+
+
+📣Join Updates [Channel📣](t.me/igroupzoid) 
+🤖Support [Bot🤖](t.me/groupzoidsupportbot)
+
 
 Click /help to find out more about how to use me.
 
-Add me in Group by Clicking [here]() 
+Add me in Group by Clicking [here](https://t.me/TheGroupZoidBot?startgroup=true) 
 """
 
 HELP_STRINGS = """
