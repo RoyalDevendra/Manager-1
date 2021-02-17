@@ -24,13 +24,15 @@ Hello *{}*, my name is *{}*!
 
 *Maintained by [Divyansh 🇮🇳](t.me/divyansh_choudhary)*
 
-Click /help or Help button below to find out more about how to use me to my full potential.
+Click /help to find out more about how to use me.
+
+Add me in Group by Clicking [here]() 
 """
 
 HELP_STRINGS = """
-💠Hey there! My name is *{}*.
+Hey there! My name is *{}*.
 Group Management Bot with advanced features. 
-*Main* commands available:
+💠*Main* commands available:
 🔸- /start: start the bot
 🔹- /help: PM's you this message.
 🔸- /help <module name>: PM's you info about that module.
