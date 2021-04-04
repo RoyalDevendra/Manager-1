@@ -22,7 +22,7 @@ from Manager.modules.helper_funcs.misc import paginate_modules
 PM_START_TEXT = """
 Hello *{}*, my name is *{}*!
 
-*Made & Maintained by [Divyansh 🇮🇳](t.me/divyansh_choudhary)*
+*Made & Maintained by* [*Divyansh 🇮🇳*](t.me/divyansh_choudhary)
 
 
 📣Join Updates [Channel📣](t.me/igroupzoid) 
@@ -244,7 +244,7 @@ def get_help(bot: Bot, update: Update):
         module = args[1].lower()
         text = "Here is the available help for the *{}* module:\n".format(HELPABLE[module].__mod_name__) \
                + HELPABLE[module].__help__
-        send_help(chat.id, text, InlineKeyboardMarkup([[InlineKeyboardButton(text="Back", callback_data="help_back")]]))
+        send_help(chat.id, text, InlineKeyboardMarkup([[InlineKeyboardButton(text="🚶Back", callback_data="help_back")]]))
 
     else:
         send_help(chat.id, HELP_STRINGS)
@@ -295,7 +295,7 @@ def settings_button(bot: Bot, update: Update):
             query.message.reply_text(text=text,
                                      parse_mode=ParseMode.MARKDOWN,
                                      reply_markup=InlineKeyboardMarkup(
-                                         [[InlineKeyboardButton(text="Back",
+                                         [[InlineKeyboardButton(text="🚶 Back",
                                                                 callback_data="stngs_back({})".format(chat_id))]]))
 
         elif prev_match:
@@ -354,7 +354,7 @@ def get_settings(bot: Bot, update: Update):
             text = "Click here to get this chat's settings, as well as yours."
             msg.reply_text(text,
                            reply_markup=InlineKeyboardMarkup(
-                               [[InlineKeyboardButton(text="Settings",
+                               [[InlineKeyboardButton(text="⚙ Settings",
                                                       url="t.me/{}?start=stngs_{}".format(
                                                           bot.username, chat.id))]]))
         else:
