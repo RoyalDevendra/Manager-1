@@ -22,7 +22,7 @@ from Manager.modules.helper_funcs.misc import paginate_modules
 PM_START_TEXT = """
 Hello *{}*, my name is *{}*!
 
-*Made & Maintained by* [*Divyansh 🇮🇳*](t.me/divyansh_choudhary)
+*Made & Maintained by* [Divyansh 🇮🇳](t.me/divyansh_choudhary)
 
 
 📣Join Updates [Channel📣](t.me/igroupzoid) 
@@ -190,7 +190,7 @@ def help_button(bot: Bot, update: Update):
             query.message.reply_text(text=text,
                                      parse_mode=ParseMode.MARKDOWN,
                                      reply_markup=InlineKeyboardMarkup(
-                                         [[InlineKeyboardButton(text="Back", callback_data="help_back")]]))
+                                         [[InlineKeyboardButton(text="🚶 Back", callback_data="help_back")]]))
 
         elif prev_match:
             curr_page = int(prev_match.group(1))
@@ -235,7 +235,7 @@ def get_help(bot: Bot, update: Update):
 
         update.effective_message.reply_text("Contact me in PM to get the list of possible commands.",
                                             reply_markup=InlineKeyboardMarkup(
-                                                [[InlineKeyboardButton(text="Help",
+                                                [[InlineKeyboardButton(text="❔Help",
                                                                        url="t.me/{}?start=help".format(
                                                                            bot.username))]]))
         return
