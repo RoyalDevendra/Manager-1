@@ -36,6 +36,7 @@ Add me in Group by Clicking [here](https://t.me/TheGroupZoidBot?startgroup=true)
 
 HELP_STRINGS = """
 Hey there! My name is *{}*.
+Version :- *v2.0.1*
 Group Management Bot with advanced features. 
 💠*Main* commands available:
 🔸- /start: start the bot
