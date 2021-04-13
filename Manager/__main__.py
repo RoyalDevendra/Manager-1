@@ -21,6 +21,7 @@ from Manager.modules.helper_funcs.misc import paginate_modules
 
 PM_START_TEXT = """
 Hello *{}*, my name is *{}*!
+ɪ ᴄᴀɴ ᴍᴀɴᴀɢᴇ ʏᴏᴜʀ ɢʀᴏᴜᴘ ᴇғғɪᴄɪᴇɴᴛʟʏ, ᴀᴅᴅ ᴍᴇ ᴛᴏ ᴀ ɢʀᴏᴜᴘ ᴀɴᴅ sᴇᴇ ᴍʏ ᴍᴀɢɪᴄ. 
 
 *Made & Maintained by* [Divyansh 🇮🇳](t.me/divyansh_choudhary)
 
@@ -159,9 +160,11 @@ def send_start(bot, update):
       text = PM_START_TEXT
   
       keyboard = [[InlineKeyboardButton(text="➕Add me to a Group➕", url=f"https://t.me/TheGroupZoidBot?startgroup=true")]]
-      keyboard = [[InlineKeyboardButton(text="📢Channel", url=f"https://t.me/iGroupZoid")]]
-      keyboard += [[InlineKeyboardButton(text="Group👥", url=f"https://t.me/TheGroupZoid")]]
+      keyboard += [[InlineKeyboardButton(text="📢Channel", url=f"https://t.me/iGroupZoid"), 
+         InlineKeyboardButton(text="Group👥", url=f"https://t.me/TheGroupZoid")]]
       keyboard = [[InlineKeyboardButton(text="❔ Help", callback_data="help_back")]]
+
+      update.effective_message.reply_text(PM_START_TEXT.format(escape_markdown(first_name), bot.first_name), reply_markup=InlineKeyboardMarkup(keyboard), disable_web_page_preview=True, parse_mode=ParseMode.MARKDOWN)
 
 # for test purposes
 def error_callback(bot, update, error):
