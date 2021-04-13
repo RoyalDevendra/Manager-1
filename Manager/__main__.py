@@ -4,8 +4,6 @@
 import importlib
 import re
 from typing import Optional, List
-import pyrogram
-from pyrogram.types import InlineKeyboardMarkup, InlineKeyboard, InlineKeyboardButton
 from telegram import Bot, Update, ParseMode, InlineKeyboardMarkup, InlineKeyboardButton
 from telegram.error import Unauthorized, BadRequest, TimedOut, NetworkError, ChatMigrated, TelegramError
 from telegram.ext import CommandHandler, MessageHandler, CallbackQueryHandler, Filters
@@ -25,11 +23,7 @@ Hello *{}*, my name is *{}*!
 ɪ ᴄᴀɴ ᴍᴀɴᴀɢᴇ ʏᴏᴜʀ ɢʀᴏᴜᴘ ᴇғғɪᴄɪᴇɴᴛʟʏ, ᴀᴅᴅ ᴍᴇ ᴛᴏ ᴀ ɢʀᴏᴜᴘ ᴀɴᴅ sᴇᴇ ᴍʏ ᴍᴀɢɪᴄ. 
 
 *Made & Maintained by* [Divyansh 🇮🇳](t.me/divyansh_choudhary)
-
-
-📣Join Updates [Channel📣](t.me/igroupzoid) 
-🤖Support [Bot🤖](t.me/groupzoidsupportbot)
-
+**Updates Channel**📣: [Click here](t.me/igroupzoid) 
 
 Click /help to find out more about how to use me.
 
@@ -148,23 +142,6 @@ def start(bot: Bot, update: Update, args: List[str]):
     else:
         update.effective_message.reply_text("Yo, whatsUp?. I'm Alive.")
 
-def send_start(bot, update):
-    #Try to remove old message
-    try:
-        query = update.callback_query
-        query.message.delete() 
-    except:
-        pass
-    chat = update.effective_chat # type: Optional[Chat]
-    first_name = update.effective_user.first_name
-    text = PM_START_TEXT
-    keyboard = [[InlineKeyboardButton(text="➕Add me to a Group➕", url=f"https://t.me/TheGroupZoidBot?startgroup=start")]]
-    keyboard += [[InlineKeyboardButton(text="📢Channel", url=f"@iGroupZoid"), 
-                InlineKeyboardButton(text="Group👥", url=f"@TheGroupZoid")]]
-
-    keyboard = [[InlineKeyboardButton(text="❔ Help", callback_data="help_back")]]
-
-    update.effective_message.reply_text(PM_START_TEXT.format(escape_markdown(first_name), bot.first_name), reply_markup=InlineKeyboardMarkup(keyboard), disable_web_page_preview=True, parse_mode=ParseMode.MARKDOWN)
 
 # for test purposes
 def error_callback(bot, update, error):
