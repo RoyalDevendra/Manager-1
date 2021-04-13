@@ -148,23 +148,22 @@ def start(bot: Bot, update: Update, args: List[str]):
         update.effective_message.reply_text("Yo, whatsUp?. I'm Alive.")
 
 def send_start(bot, update):
-    #Try to remove olf message
+    #Try to remove old message
     try:
         query = update.callback_query
         query.message.delete() 
     except:
         pass
+    chat = update.effective_chat # type: Optional[Chat]
+    first_name = update.effective_user.first_name
+    text = PM_START_TEXT
+    keyboard = [[InlineKeyboardButton(text="➕Add me to a Group➕", url=f"https://t.me/TheGroupZoidBot?startgroup=start")]]
+    keyboard += [[InlineKeyboardButton(text="📢Channel", url=f"@iGroupZoid"), 
+                InlineKeyboardButton(text="Group👥", url=f"@TheGroupZoid")]]
 
-      chat = update.effective_chat # type: Optional[Chat]
-      first_name = update.effective_user.first_name
-      text = PM_START_TEXT
-  
-      keyboard = [[InlineKeyboardButton(text="➕Add me to a Group➕", url=f"https://t.me/TheGroupZoidBot?startgroup=true")]]
-      keyboard += [[InlineKeyboardButton(text="📢Channel", url=f"https://t.me/iGroupZoid"), 
-         InlineKeyboardButton(text="Group👥", url=f"https://t.me/TheGroupZoid")]]
-      keyboard = [[InlineKeyboardButton(text="❔ Help", callback_data="help_back")]]
+    keyboard = [[InlineKeyboardButton(text="❔ Help", callback_data="help_back")]]
 
-      update.effective_message.reply_text(PM_START_TEXT.format(escape_markdown(first_name), bot.first_name), reply_markup=InlineKeyboardMarkup(keyboard), disable_web_page_preview=True, parse_mode=ParseMode.MARKDOWN)
+    update.effective_message.reply_text(PM_START_TEXT.format(escape_markdown(first_name), bot.first_name), reply_markup=InlineKeyboardMarkup(keyboard), disable_web_page_preview=True, parse_mode=ParseMode.MARKDOWN)
 
 # for test purposes
 def error_callback(bot, update, error):
