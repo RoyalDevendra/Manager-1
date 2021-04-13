@@ -161,7 +161,6 @@ def send_start(bot, update):
     keyboard = [[InlineKeyboardButton(text="➕Add me to a Group➕", url=f"https://t.me/TheGroupZoidBot?startgroup=start")]]
     keyboard += [[InlineKeyboardButton(text="📢Channel", url=f"@iGroupZoid"), 
                 InlineKeyboardButton(text="Group👥", url=f"@TheGroupZoid")]]
-
     keyboard = [[InlineKeyboardButton(text="❔ Help", callback_data="help_back")]]
 
     update.effective_message.reply_text(PM_START_TEXT.format(escape_markdown(first_name), bot.first_name), reply_markup=InlineKeyboardMarkup(keyboard), disable_web_page_preview=True, parse_mode=ParseMode.MARKDOWN)
