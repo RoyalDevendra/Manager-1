@@ -144,8 +144,24 @@ def start(bot: Bot, update: Update, args: List[str]):
                 PM_START_TEXT.format(escape_markdown(first_name), escape_markdown(bot.first_name), SUPPORT_CHAT),
                 parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True)
     else:
-        update.effective_message.reply_text("Yo, whadup?")
+        update.effective_message.reply_text("Yo, whatsUp?. I'm Alive.")
 
+def send_start(bot, update):
+    #Try to remove olf message
+    try:
+        query = update.callback_query
+        query.message.delete() 
+    except:
+        pass
+
+      chat = update.effective_chat # type: Optional[Chat]
+      first_name = update.effective_user.first_name
+      text = PM_START_TEXT
+  
+      keyboard = [[InlineKeyboardButton(text="➕Add me to a Group➕", url=f"https://t.me/TheGroupZoidBot?startgroup=true")]]
+      keyboard = [[InlineKeyboardButton(text="📢Channel", url=f"https://t.me/iGroupZoid")]]
+      keyboard += [[InlineKeyboardButton(text="Group👥", url=f"https://t.me/TheGroupZoid")]]
+      keyboard = [[InlineKeyboardButton(text="❔ Help", callback_data="help_back")]]
 
 # for test purposes
 def error_callback(bot, update, error):
