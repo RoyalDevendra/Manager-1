@@ -4,7 +4,8 @@
 import importlib
 import re
 from typing import Optional, List
-
+import pyrogram
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboard, InlineKeyboardButton
 from telegram import Bot, Update, ParseMode, InlineKeyboardMarkup, InlineKeyboardButton
 from telegram.error import Unauthorized, BadRequest, TimedOut, NetworkError, ChatMigrated, TelegramError
 from telegram.ext import CommandHandler, MessageHandler, CallbackQueryHandler, Filters
